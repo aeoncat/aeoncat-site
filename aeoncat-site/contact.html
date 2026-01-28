@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact — aeoncat</title>
+
+    <meta name="description" content="Contact aeoncat — send a message, collaboration ideas, or questions." />
+
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+    <!-- Skip link -->
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="brand">
+                <a href="index.html">aeoncat</a>
+            </div>
+
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html" aria-current="page">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main id="main">
+
+        <!-- Intro -->
+        <section>
+            <div class="container">
+                <h1>Contact</h1>
+                <p>
+                    Got a project, question, or idea worth exploring? Send a note.
+                    Short is fine.
+                </p>
+            </div>
+        </section>
+
+        <!-- Contact Card -->
+        <section>
+            <div class="container">
+                <h2>Send a message</h2>
+
+                <!-- NOTE: For a purely static site, this form won't send anywhere yet.
+             Add a service later (Formspree, Netlify Forms, etc.) -->
+                <form action="#" method="post">
+                    <p>
+                        <label for="name"><strong>Name</strong></label><br />
+                        <input type="text" id="name" name="name" autocomplete="name" required />
+                    </p>
+
+                    <p>
+                        <label for="email"><strong>Email</strong></label><br />
+                        <input type="email" id="email" name="email" autocomplete="email" required />
+                    </p>
+
+                    <p>
+                        <label for="topic"><strong>Topic</strong></label><br />
+                        <select id="topic" name="topic">
+                            <option value="collab">Collaboration</option>
+                            <option value="question">Question</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="message"><strong>Message</strong></label><br />
+                        <textarea id="message" name="message" rows="7" required></textarea>
+                    </p>
+
+                    <button type="submit" class="btn primary">Send</button>
+                </form>
+
+                <p style="margin-top: 20px;">
+                    Prefer email? Reach me at
+                    <a class="link" href="mailto:aeoncat@aeoncat.com">aeoncat@aeoncat.com</a>
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 aeoncat</p>
+
+            <ul class="footer-nav">
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+
+</html>
