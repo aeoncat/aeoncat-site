@@ -54,8 +54,28 @@
             opacity: 0.9;
         }
 
-        .last {
-            margin-bottom: 250px;
+
+
+
+        .hidden-link {
+            display: inline-block;
+            padding: 14px 18px;
+            border-radius: 999px;
+            background: rgba(224, 7, 7, 0.34);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .hidden-link:hover {
+            background: rgba(255, 255, 255, 0.16);
+            transform: translateY(-2px);
+        }
+
+        .hidden-link:active {
+            transform: translateY(0);
         }
     </style>
 </head>
@@ -66,26 +86,34 @@
 
         <h1>Hey James 💘</h1>
         <p>I made this for you.</p>
+
         <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdW5wMnpwMWQxazU2b2RvcGRwOWNmbXYxdDAybnl1NXV4eGhyazYzMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/mcsPU3SkKrYDdW3aAU/giphy.gif"
             alt="Cat typing on a laptop" />
+        <p>Scroll slowly. It's a love letter. 💌</p>
     </section>
 
     <section>
         <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExenNmdjY5d2h1MmYzNjV1b3pmYm1wN3ozb3F4aDI4Ym1hOGVwMTc3MyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Zl7u48zLVFgLpRwq6f/giphy.gif"
             alt="Sweet love gif" />
-        <p>You make every day brighter. I am so happy you are in my life.</p>
+        <p>Loving you is the easiest decision I have ever made. I am so happy you are in my life.</p>
     </section>
 
     <section>
         <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMm51dXRmcTFnaGo4eWs0N3drZXVqaW5uN2duYmd6bnRhYnMxbWJ5eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/IFulQZdPf360M9J9Dl/giphy.gif"
             alt="Another cute gif" />
-        <p>You are so hot and sexy. 😍</p>
+        <p>You are so hot and sexy. I think you're freaky and I like you a lot. 😍</p>
     </section>
 
     <section>
         <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbzBzeDg3ajZnbGZib3VyeTE3YW1lNmwzdGNmeHY5NHA3djV1aGxyeSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/u8Acwgvs5U9kzcj13d/giphy.gif"
             alt="Another cute gif" />
         <p>You always support me when I need it. I love you so much.</p>
+    </section>
+
+    <section>
+        <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3ViYzIzcHE0ZTl3cWMwcmtqN2ZzMDNzMGQxcm4xczByMnZlczFpaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/PUPMcrrW0c8NEGp4zt/giphy.gif"
+            alt="Another cute gif" />
+        <p>You are the most amazing person I've ever met. I'm so lucky to be with you.</p>
     </section>
 
     <section>
@@ -103,8 +131,14 @@
     <section>
         <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbHFrbnc3ZXRsOTdkdTVrc2UzNzlxaGcwb2dxeWlpN285MzJyZDR1dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Pk9n41p2yA7CFGJg60/giphy.gif"
             alt="Another cute gif" />
-        <p class="last">Happy Valentine's Day, James!</p>
+        <p style="font-size: 42px;">Happy Valentine's Day, James! 👩🏻‍❤️‍👨🏻</p>
+        <section style="padding-top: 50; padding-bottom: 120px;"><a href="secret.html" class="hidden-link">
+                One more thing…
+            </a></section>
     </section>
+
+
+
 
     <script>
         const images = document.querySelectorAll('img');
