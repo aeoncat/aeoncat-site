@@ -15,7 +15,7 @@
         }
 
         section {
-            padding: 40px 20px;
+            padding: 120px 20px;
             max-width: 600px;
             margin: auto;
         }
@@ -25,6 +25,20 @@
             height: auto;
             border-radius: 16px;
             margin-bottom: 18px;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+            transform: translateY(10px);
+            transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+        }
+
+        img.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        img.fade-out {
+            opacity: 0;
+            transform: translateY(10px);
         }
 
         h1 {
@@ -39,22 +53,27 @@
             line-height: 1.4;
             opacity: 0.9;
         }
+
+        .last {
+            margin-bottom: 250px;
+        }
     </style>
 </head>
 
 <body>
 
     <section>
-        <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdW5wMnpwMWQxazU2b2RvcGRwOWNmbXYxdDAybnl1NXV4eGhyazYzMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/mcsPU3SkKrYDdW3aAU/giphy.gif"
-            alt="Cat typing on a laptop" />
+
         <h1>Hey James 💘</h1>
         <p>I made this for you.</p>
+        <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdW5wMnpwMWQxazU2b2RvcGRwOWNmbXYxdDAybnl1NXV4eGhyazYzMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/mcsPU3SkKrYDdW3aAU/giphy.gif"
+            alt="Cat typing on a laptop" />
     </section>
 
     <section>
         <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExenNmdjY5d2h1MmYzNjV1b3pmYm1wN3ozb3F4aDI4Ym1hOGVwMTc3MyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Zl7u48zLVFgLpRwq6f/giphy.gif"
             alt="Sweet love gif" />
-        <p>You make every day brighter. Even the messy ones.</p>
+        <p>You make every day brighter. I am so happy you are in my life.</p>
     </section>
 
 
@@ -63,11 +82,60 @@
             alt="Another cute gif" />
         <p>Thanks for being you. You're my favorite.</p>
     </section>
+
+    <section>
+        <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMm51dXRmcTFnaGo4eWs0N3drZXVqaW5uN2duYmd6bnRhYnMxbWJ5eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/IFulQZdPf360M9J9Dl/giphy.gif"
+            alt="Another cute gif" />
+        <p>You are so hot and sexy. 😍</p>
+    </section>
+
     <section>
         <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbHFrbnc3ZXRsOTdkdTVrc2UzNzlxaGcwb2dxeWlpN285MzJyZDR1dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Pk9n41p2yA7CFGJg60/giphy.gif"
             alt="Another cute gif" />
-        <p>Happy Valentine's Day, James!</p>
+        <p class="last">Happy Valentine's Day, James!</p>
     </section>
+
+    <script>
+        const images = document.querySelectorAll('img');
+
+        function updateImageVisibility() {
+            const windowHeight = window.innerHeight;
+
+            images.forEach(img => {
+                const rect = img.getBoundingClientRect();
+                const imageTop = rect.top;
+                const imageBottom = rect.bottom;
+
+                // Check if image is in viewport
+                if (imageBottom > 0 && imageTop < windowHeight) {
+                    // Calculate how much of the image is visible (0 to 1)
+                    const visibleStart = Math.max(0, -imageTop);
+                    const visibleEnd = Math.min(rect.height, windowHeight - imageTop);
+                    const visibleAmount = (visibleEnd - visibleStart) / rect.height;
+
+                    // Only fully visible or mostly visible
+                    if (visibleAmount > 0.3) {
+                        img.classList.remove('fade-out');
+                        img.classList.add('fade-in');
+                    } else {
+                        img.classList.remove('fade-in');
+                        img.classList.add('fade-out');
+                    }
+                } else {
+                    // Image is out of viewport
+                    img.classList.remove('fade-in');
+                    img.classList.add('fade-out');
+                }
+            });
+        }
+
+        // Run on scroll
+        window.addEventListener('scroll', updateImageVisibility, { passive: true });
+
+        // Initial check on page load
+        window.addEventListener('load', updateImageVisibility);
+        updateImageVisibility();
+    </script>
 </body>
 
 </html>
