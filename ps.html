@@ -89,17 +89,20 @@
     </audio>
 
     <script>
+        window.onload = () => alert("Put your headphones in ❤️");
 
-        // popup immediately
-        window.onload = () => {
-            alert("Put your headphones in ❤️");
-        };
+        const audioEl = document.getElementById("voice");
 
         function playAudio() {
-            document.getElementById("voice").play();
+            audioEl.play()
+                .then(() => console.log("Playing ✅"))
+                .catch((err) => {
+                    console.log("Play failed ❌", err);
+                    alert(err.name + ": " + err.message);
+                });
         }
-
     </script>
+
 
 </body>
 
